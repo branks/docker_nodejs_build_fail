@@ -38,7 +38,7 @@ load("@build_bazel_rules_nodejs//:index.bzl", "npm_install")
 load("@rules_nodejs//nodejs:repositories.bzl", "nodejs_register_toolchains")
 
 nodejs_register_toolchains(
-  name = "nodejs",
+  name = "nodejs_host",
   use_nvmrc = "//:.nvmrc",
 )
 
@@ -46,6 +46,7 @@ npm_install(
   name = "npm",
   package_json = "//:package.json",
   package_lock_json = "//:package-lock.json",
+  node_repository = "nodejs_host",
 )
 
 ###############################
