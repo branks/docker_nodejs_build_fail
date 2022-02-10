@@ -5,7 +5,6 @@ nodejs_binary(
   name = "myapp",
   data = [],
   entry_point = "index.js",
-  toolchain = "nodejs_host",
 )
 
 nodejs_image(
@@ -14,5 +13,5 @@ nodejs_image(
   data = ["myapp"],
   include_node_repo_args = False,
   binary = "myapp",
-  node_repository_name = "nodejs_host",
+  node_repository_name = "nodejs_linux_amd64",
 )
